@@ -23,7 +23,7 @@ endpoints.get('/listarclientes/cliente', async(req,resp) => {
 endpoints.delete('/listarclientes/apagar', async(req,resp) =>{
     let id = req.query.id;
     let dados = await apagar(id)
-    resp.send('agenda apagada com sucesso!!')
+    resp.send('cliente deletado das compras do nosso site com sucesso!!')
 })
 
 
