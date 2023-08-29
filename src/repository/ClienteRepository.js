@@ -1,4 +1,4 @@
-import conexao from "./connection";
+import conexao from "./connection.js";
 
 export async function listarClientes() {
     let sql = 'Select * From tb_Cliente';
@@ -25,5 +25,13 @@ export async function listarNomeCliente() {
     let resp = await conexao.query(sql)
     let dados = resp[0]
 
+    return dados;
+}
+
+export async function apagar(id){
+    let sql = 'delete from tb_cliente where id_cliente = ?';
+    let resp = await conexao.query(sql , [id]);
+
+    let dados = resp[0];
     return dados;
 }
